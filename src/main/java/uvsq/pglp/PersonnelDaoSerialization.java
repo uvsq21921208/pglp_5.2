@@ -8,25 +8,23 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class AnnuaireDao extends Dao<Annuaire> {
-
+public class PersonnelDaoSerialization extends Dao<Personnel> {
 
   @Override
-  public Annuaire create(Annuaire obj) {
-    try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("Annuaire"))) {
+  public Personnel create(Personnel obj) {
+    try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(obj.getNom()))) {
       out.writeObject(obj);
-    } catch (IOException ioe) { 
+    } catch (IOException ioe) {
       ioe.printStackTrace();
     }
     return obj;
   }
 
   @Override
-  public Annuaire find(String id) {
-    Annuaire annuaire = null;
+  public Personnel find(String id) {
+    Personnel personnel = null;
     try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(id))) {
-      annuaire = (Annuaire) in.readObject();
-    
+      personnel = (Personnel) in.readObject();
     } catch (ClassNotFoundException  ioe) {
       ioe.printStackTrace();
     } catch (FileNotFoundException e) {
@@ -34,12 +32,12 @@ public class AnnuaireDao extends Dao<Annuaire> {
     } catch (IOException e) {
       e.printStackTrace();
     }
-    return annuaire;
+    return personnel;
   }
 
   @Override
-  public Annuaire update(Annuaire obj) {
-    String file = "Annuaire";
+  public Personnel update(Personnel obj) {
+    String file = obj.getNom();
     try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file, false))) {
       out.writeObject(obj);
     } catch (IOException ioe) {
@@ -49,8 +47,9 @@ public class AnnuaireDao extends Dao<Annuaire> {
   }
 
   @Override
-  public void delete(Annuaire obj) {
-    File file = new File("Annuaire");
+  public void delete(Personnel obj) {
+
+    File file = new File(obj.getNom());
     boolean deleted = file.delete();
     if (deleted) {
       System.out.println("deleted");
@@ -59,4 +58,3 @@ public class AnnuaireDao extends Dao<Annuaire> {
     }
   }
 }
-

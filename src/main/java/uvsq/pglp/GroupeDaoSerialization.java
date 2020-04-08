@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class GroupeDao extends Dao<CompositePersonnel> {
+public class GroupeDaoSerialization extends Dao<CompositePersonnel> {
 
   @Override
   public CompositePersonnel create(CompositePersonnel obj) {
