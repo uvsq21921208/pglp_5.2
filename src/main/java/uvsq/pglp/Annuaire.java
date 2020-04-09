@@ -9,7 +9,7 @@ public class Annuaire implements Serializable {
   private static final long serialVersionUID = 1L;
   private static Annuaire ANNUAIRE;
   private CompositePersonnel  head;
-
+  
   private Annuaire() {
     head = new CompositePersonnel(1);
   }

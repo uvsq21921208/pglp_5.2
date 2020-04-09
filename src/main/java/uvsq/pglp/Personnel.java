@@ -37,12 +37,12 @@ public final class Personnel extends TypePersonnel implements Serializable {
   /**
   * personnel builder.
   */
-
+  private int groupeId;
   public static class PersonelBuilder {
     /**
     * Le nom d'un personnel.
     */
-
+    private int groupeId;
     private String nom;
     /**
     * Le prenom d'un personnel.
@@ -107,6 +107,12 @@ public final class Personnel extends TypePersonnel implements Serializable {
       this.telephones.add(phonePara);
       return this;
     }
+    
+    public PersonelBuilder groupeId(final int id) {
+        this.setGroupeId(id);
+        return this;
+    }
+    
     /**
     * personnel.
     * @return instance.
@@ -137,6 +143,20 @@ public final class Personnel extends TypePersonnel implements Serializable {
       return this.telephones;
     }
 
+	/**
+	 * @return the groupeId
+	 */
+	public int getGroupeId() {
+		return groupeId;
+	}
+
+	/**
+	 * @param groupeId the groupeId to set
+	 */
+	public void setGroupeId(int groupeId) {
+		this.groupeId = groupeId;
+	}
+
   }
   /**
   * private constructor.
@@ -149,6 +169,7 @@ public final class Personnel extends TypePersonnel implements Serializable {
     this.fonction = builder.fonction;
     setDateDeNaissance(builder.getDateDeNaissance());
     setTelephones(builder.getTelephones());
+    setGroupeId(builder.getGroupeId());
   }
   /**
   * getter for nom.
@@ -246,6 +267,18 @@ public final class Personnel extends TypePersonnel implements Serializable {
     return Objects.equals(fonction, other.fonction) && Objects.equals(nom, other.nom)
        && Objects.equals(prenom, other.prenom);
   }
+/**
+ * @return the groupeId
+ */
+public int getGroupeId() {
+	return groupeId;
+}
+/**
+ * @param groupeId the groupeId to set
+ */
+public void setGroupeId(int groupeId) {
+	this.groupeId = groupeId;
+}
    
 
 }
