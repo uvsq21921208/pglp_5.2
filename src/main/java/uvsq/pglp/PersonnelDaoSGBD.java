@@ -43,13 +43,14 @@ public class PersonnelDaoSGBD extends Dao<Personnel>{
 			select.setString(1, id);
 			select.execute();
 			ResultSet result = select.getResultSet();
-			result.next();
-			String nom = result.getString("nom");
-			String prenom = result.getString("prenom");
-			String fonction = result.getString("Fonction");
-			int groupeid = result.getInt("groupeid");
-			p = new Personnel.PersonelBuilder(nom, prenom, fonction).groupeId(groupeid).build();
-			select.close();
+			if (result.next()) {
+				String nom = result.getString("nom");
+				String prenom = result.getString("prenom");
+				String fonction = result.getString("Fonction");
+				int groupeid = result.getInt("groupeid");
+				p = new Personnel.PersonelBuilder(nom, prenom, fonction).groupeId(groupeid).build();
+				select.close();
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -63,7 +64,7 @@ public class PersonnelDaoSGBD extends Dao<Personnel>{
 	public Personnel update(Personnel obj) {
 		this.connect();
 		try {
-			PreparedStatement update = this.connect.prepareStatement("update table Personnels"
+			PreparedStatement update = this.connect.prepareStatement("update Personnels"
 					+ " set nom = (?), prenom = (?), fonction = (?), groupeid = (?)"
 					+ " where nom = (?) ");
 			update.setString(1, obj.getNom());
@@ -72,6 +73,7 @@ public class PersonnelDaoSGBD extends Dao<Personnel>{
 			update.setInt(4, obj.getGroupeId());
 			update.setString(5, obj.getNom());
 			update.executeUpdate();
+			update.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -85,13 +87,15 @@ public class PersonnelDaoSGBD extends Dao<Personnel>{
 		this.connect();
 		try {
 			PreparedStatement delete = this.connect.prepareStatement("delete from Personnels "+
-					 " nom = (?)");
+					 "where nom = (?)");
+			delete.setString(1, obj.getNom());
 			delete.execute();
+			delete.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//this.disconnect();
+	
 		
 	}
 

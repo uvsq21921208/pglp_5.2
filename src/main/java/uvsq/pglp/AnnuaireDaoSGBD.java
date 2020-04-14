@@ -1,6 +1,5 @@
 package uvsq.pglp;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -40,14 +39,15 @@ public class AnnuaireDaoSGBD extends Dao<Annuaire>{
 
 	@Override
 	public void delete(Annuaire obj) {
-		String sql = "drop table personnels";
+		
 		try {
 			statement = connect.createStatement();
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		sql = "drop table groupes";
+	
+		String sql = "drop table personnels";
 		try {
 			statement.execute(sql);
 		} catch (SQLException e1) {
@@ -55,7 +55,9 @@ public class AnnuaireDaoSGBD extends Dao<Annuaire>{
 			e1.printStackTrace();
 		}
 		try {
+			sql = "drop table groupes";
 			statement.execute(sql);
+			statement.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -48,13 +48,14 @@ public class GroupeDaoSGBD extends Dao<CompositePersonnel>{
 			   select.setInt(1, groupeid);
 			   select.execute();
 			   ResultSet result = select.getResultSet();
-			   result.next();
-			   obj = new CompositePersonnel(result.getInt(1));
-			   PersonnelDaoSGBD pd = new PersonnelDaoSGBD(); 
-			   ArrayList<Personnel> personnels = pd.getPersonnels(obj.getID());
+			   if (result.next()) {
+				   	obj = new CompositePersonnel(result.getInt(1));
+			   		PersonnelDaoSGBD pd = new PersonnelDaoSGBD(); 
+			   		ArrayList<Personnel> personnels = pd.getPersonnels(obj.getID());
 			   
-			   for(Personnel p : personnels ) {
-				   obj.add(p);
+			   		for(Personnel p : personnels ) {
+				   		obj.add(p);
+			   		}
 			   }
 			   select.close();
 		} catch (SQLException e) {
@@ -66,13 +67,51 @@ public class GroupeDaoSGBD extends Dao<CompositePersonnel>{
 
 	@Override
 	public CompositePersonnel update(CompositePersonnel obj) {
-		// TODO Auto-generated method stub
-		return null;
+		this.connect();
+		try {
+			PreparedStatement updateGroupe =
+			this.connect.prepareStatement("update Groupes set groupeid = (?)");
+			updateGroupe.setInt(1, obj.getID());
+			DaoFactorySGBD dao = new DaoFactorySGBD();
+			Dao<Personnel> daoP = dao.createPersonnelDao();
+			for (TypePersonnel p : obj.getAllPersonnel()) {
+			     if (daoP.find(((Personnel) p).getNom()) != null) {
+			    	 daoP.update((Personnel) p);
+			     } else {
+			    	 daoP.create((Personnel) p);
+			     }
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//this.disconnect();
+		return obj;
 	}
 
 	@Override
 	public void delete(CompositePersonnel obj) {
-		// TODO Auto-generated method stub
+		 this.connect();
+		 try {
+			  DaoFactorySGBD dao = new DaoFactorySGBD();
+			  Dao<Personnel> daoP = dao.createPersonnelDao();
+			  for (TypePersonnel p : obj.getAllPersonnel()) {
+				   
+				   if (!p.isGroupe()) {
+				      daoP.delete((Personnel) p);
+				   }
+			   }
+			   String sql = "Delete from Groupes where groupeid = (?)";
+			   int groupeid = obj.getID();
+			   PreparedStatement delete = connect.prepareStatement(sql);
+			   delete.setInt(1, groupeid);
+			   delete.execute();
+			   delete.close();
+		} catch (SQLException e) {
+			   e.printStackTrace();
+		}
+	
 		
 	}
 
