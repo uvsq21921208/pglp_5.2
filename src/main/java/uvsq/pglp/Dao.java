@@ -18,11 +18,11 @@ public abstract class Dao<T> {
   public abstract T update(T obj);
 
   public abstract void delete(T obj);
-  public Connection connect() {
+  public void connect() {
 
 	    try {
 	      Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-	      connect = DriverManager.getConnection("jdbc:derby:test;create=true");
+	      connect = DriverManager.getConnection("jdbc:derby:18;create=true");
 	    } catch (ClassNotFoundException | SQLException e) {
 	      e.printStackTrace();
 	      try {
@@ -31,7 +31,7 @@ public abstract class Dao<T> {
 	        ex.printStackTrace();
 	      }
 	    }
-	    return connect;
+	
 	  }
 
 	  public void disconnect() {

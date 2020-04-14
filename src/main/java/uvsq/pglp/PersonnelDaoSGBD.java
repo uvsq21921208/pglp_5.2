@@ -9,6 +9,8 @@ public class PersonnelDaoSGBD extends Dao<Personnel>{
 
 	@Override
 	public Personnel create(Personnel obj) {
+		this.connect();
+		int i = - 1;
         try {
 		   PreparedStatement insert = this.connect.prepareStatement("Insert into Personnels(nom, prenom, fonction,groupeid)"
 					+ " values (?,?,?,?)");
@@ -16,37 +18,50 @@ public class PersonnelDaoSGBD extends Dao<Personnel>{
 		   insert.setString(2, obj.getPrenom());
 		   insert.setString(3, obj.getFonction());
 		   insert.setInt(4, obj.getGroupeId());
-		   insert.execute();
+		   i = insert.executeUpdate();
+		   insert.close();
+		   
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return obj;
+        //this.disconnect();
+        if (i > 0) {
+        	return obj;
+        } else {
+        	return null;
+        }
 	}
 
 	@Override
 	public Personnel find(String id) {
 		Personnel p = null;
+		this.connect();
 		try {
-			PreparedStatement select = this.connect.prepareStatement("select * from personnel"
+			PreparedStatement select = this.connect.prepareStatement("select * from personnels"
 					+ " where nom = (?)");
 			select.setString(1, id);
 			select.execute();
-			String nom = select.getResultSet().getString("nom");
-			String prenom = select.getResultSet().getString("prenom");
-			String fonction = select.getResultSet().getString("Fonction");
-			int groupeid = select.getResultSet().getInt("groupeid");
+			ResultSet result = select.getResultSet();
+			result.next();
+			String nom = result.getString("nom");
+			String prenom = result.getString("prenom");
+			String fonction = result.getString("Fonction");
+			int groupeid = result.getInt("groupeid");
 			p = new Personnel.PersonelBuilder(nom, prenom, fonction).groupeId(groupeid).build();
+			select.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		//this.disconnect();
 		return p;
 		
 	}
 
 	@Override
 	public Personnel update(Personnel obj) {
+		this.connect();
 		try {
 			PreparedStatement update = this.connect.prepareStatement("update table Personnels"
 					+ " set nom = (?), prenom = (?), fonction = (?), groupeid = (?)"
@@ -56,16 +71,18 @@ public class PersonnelDaoSGBD extends Dao<Personnel>{
 			update.setString(3, obj.getFonction());
 			update.setInt(4, obj.getGroupeId());
 			update.setString(5, obj.getNom());
-			update.execute();
+			update.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		//this.disconnect();
 		return obj;
 	}
 
 	@Override
 	public void delete(Personnel obj) {
+		this.connect();
 		try {
 			PreparedStatement delete = this.connect.prepareStatement("delete from Personnels "+
 					 " nom = (?)");
@@ -74,11 +91,14 @@ public class PersonnelDaoSGBD extends Dao<Personnel>{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		//this.disconnect();
 		
 	}
 
 	public ArrayList<Personnel> getPersonnels(int groupeId){
+
 		ArrayList<Personnel> personnels = new ArrayList<Personnel>();
+		this.connect();
 		try {
 			PreparedStatement select = this.connect.prepareStatement("Select * from Personnels where groupeid = (?)");
 			select.setInt(1, groupeId);
@@ -97,7 +117,7 @@ public class PersonnelDaoSGBD extends Dao<Personnel>{
 			e.printStackTrace();
 		}
 		
-		
+		//this.disconnect();
 		return personnels;
 	}
 }

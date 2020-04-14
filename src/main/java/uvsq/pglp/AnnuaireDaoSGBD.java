@@ -9,6 +9,7 @@ public class AnnuaireDaoSGBD extends Dao<Annuaire>{
 	@Override
 	public Annuaire create(Annuaire obj) {
 		// TODO Auto-generated method stub
+		 this.connect();
 		 try {
 			   String sql = "CREATE TABLE Groupes(groupeid INTEGER primary key not null)";
 			   statement = connect.createStatement();
@@ -16,10 +17,12 @@ public class AnnuaireDaoSGBD extends Dao<Annuaire>{
 			   sql = "CREATE TABLE Personnels(nom varchar(20) PRIMARY KEY NOT NULL, prenom  varchar(20), fonction varchar(20),"
 				   		+ "groupeid integer references Groupes(groupeid))";
 				   statement.execute(sql);
+			  statement.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		 //this.disconnect();
 		 return obj;
 	}
 
