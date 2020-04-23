@@ -2,9 +2,9 @@ package uvsq.pglp;
 
 public interface AbstractFactoryDao {
 
-	  Dao<Annuaire> createAnnuaireDao();
+  Dao<Annuaire> createAnnuaireDao();
 
-	  Dao<Personnel> createPersonnelDao();
+  Dao<Personnel> createPersonnelDao();
 
-	  Dao<CompositePersonnel> createCompositePersonnelDao();
+  Dao<CompositePersonnel> createCompositePersonnelDao();
 }
