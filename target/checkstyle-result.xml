@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.19">
+<file name="C:\Users\Mouttie\Desktop\GL\pglp_5.2\src\main\java\uvsq\pglp\AnnuaireDaoSgbd.java">
+</file>
+<file name="C:\Users\Mouttie\Desktop\GL\pglp_5.2\src\main\java\uvsq\pglp\Dao.java">
+</file>
+<file name="C:\Users\Mouttie\Desktop\GL\pglp_5.2\src\main\java\uvsq\pglp\DaoFactorySgbd.java">
+</file>
+<file name="C:\Users\Mouttie\Desktop\GL\pglp_5.2\src\main\java\uvsq\pglp\GroupeDaoSgbd.java">
+</file>
+<file name="C:\Users\Mouttie\Desktop\GL\pglp_5.2\src\main\java\uvsq\pglp\Personnel.java">
+</file>
+<file name="C:\Users\Mouttie\Desktop\GL\pglp_5.2\src\main\java\uvsq\pglp\PersonnelDaoSgbd.java">
+</file>
+</checkstyle>

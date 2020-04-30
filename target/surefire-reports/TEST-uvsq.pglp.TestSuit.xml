@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="10" failures="0" name="uvsq.pglp.TestSuit" time="14.069" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_102\jre\bin"/>
+    <property name="java.vm.version" value="25.102-b14"/>
+    <property name="user.country.format" value="FR"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Mouttie\Desktop\GL\pglp_5.2"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="GB"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\Mouttie\Desktop\GL\pglp_5.2"/>
+    <property name="java.runtime.version" value="1.8.0_102-b14"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_102\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\Mouttie\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\Users\Mouttie\Downloads\apache-maven-3.6.2\bin\..\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_102\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ActiveTcl\bin;C:\oraclexe\app\oracle\product\10.2.0\server\bin;C:\app\Mouttie\product\18.0.0\dbhomeXE\bin;C:\Python27\Lib\site-packages\PyQt4;c:\programdata\oracle\java\javapath;c:\program files (x86)\intel\icls client\;c:\program files\intel\icls client\;c:\windows\system32;c:\windows;c:\windows\system32\wbem;c:\windows\system32\windowspowershell\v1.0\;c:\program files (x86)\intel\intel(r) management engine components\dal;c:\program files\intel\intel(r) management engine components\dal;c:\program files (x86)\intel\intel(r) management engine components\ipt;c:\program files\intel\intel(r) management engine components\ipt;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Users\Mouttie\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\cygwin\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\Mouttie\AppDat;C:\Users\Mouttie\Downloads\Qualcomm_Drivers_QDLoader\Qualcomm Drivers\Google\Android\;C:\Python27;C:\Program Files\ISC BIND 9\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Mouttie\Downloads\apache-maven-3.6.2;C:\Program Files\Java\jdk1.8.0_102;C:\Users\Mouttie\Downloads\apache-maven-3.6.2\bin;C:\Program Files\Java\jdk1.8.0_102\bin;C:\Users\Mouttie\Downloads\chromedriver_win32\;C:\Users\Mouttie\Downloads\graphviz-2.38\release\bin\dot.exe;C:\wamp64\bin\php\php7.2.4;C:\composer;C:\Users\Mouttie\Miniconda3;C:\Users\Mouttie\Miniconda3\Library\mingw-w64\bin;C:\Users\Mouttie\Miniconda3\Library\usr\bin;C:\Users\Mouttie\Miniconda3\Library\bin;C:\Users\Mouttie\Miniconda3\Scripts;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Mouttie\AppData\Local\Programs\Python\Python37\Scripts;C:\Users\Mouttie\AppData\Local\Programs\Python\Python37\;C:\Users\Mouttie\AppData\Local\atom\bin;C:\Users\Mouttie\Downloads\uncrustify-0.64-win32\;C:\Program Files (x86)\Microsoft VS Code\bin;C:\wamp64\bin\php\php7.0.10;C:\Users\Mouttie\AppData\Local\Microsoft\WindowsApps;C:\Users\Mouttie\AppData\Roaming\npm;C:\Program Files\Java\jdk1.8.0_102\bin\;C:\Program Files (x86)\Nmap;C:\Users\Mouttie\Downloads\apache-maven-3.6.2;C:\Users\Mouttie\Downloads\chromedriver_win32\;C:\Users\Mouttie\Downloads\graphviz-2.38\release\bin;C:\Users\Mouttie\AppData\Roaming\Composer\vendor\bin;C:\Python27\ArcGIS10.3\;C:\Python27\ArcGIS10.3\Scripts;C:\Python27\ArcGIS10.3\Lib;C:\Python27\ArcGIS10.3\libs;;."/>
+    <property name="maven.conf" value="C:\Users\Mouttie\Downloads\apache-maven-3.6.2\bin\../conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="library.jansi.path" value="C:\Users\Mouttie\Downloads\apache-maven-3.6.2\bin\..\lib\jansi-native"/>
+    <property name="user.home" value="C:\Users\Mouttie"/>
+    <property name="user.timezone" value="Europe/Berlin"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="Mouttie"/>
+    <property name="java.class.path" value="C:\Users\Mouttie\Downloads\apache-maven-3.6.2\bin\..\boot\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_102\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="user.language.format" value="fr"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_102"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_102\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_102\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_102\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_102\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_102\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_102\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_102\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_102\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_102\jre\classes"/>
+    <property name="sun.stderr.encoding" value="cp850"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Users\Mouttie\Downloads\apache-maven-3.6.2\bin\.."/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.stdout.encoding" value="cp850"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="uvsq.pglp.TestSuit" name="deletePersonnelTest" time="6.731"/>
+  <testcase classname="uvsq.pglp.TestSuit" name="createGroupeTest" time="0.768"/>
+  <testcase classname="uvsq.pglp.TestSuit" name="updatePersonnelTest" time="1.181"/>
+  <testcase classname="uvsq.pglp.TestSuit" name="createAnnuaireTest" time="0.796"/>
+  <testcase classname="uvsq.pglp.TestSuit" name="deleteGroupeTest" time="0.701"/>
+  <testcase classname="uvsq.pglp.TestSuit" name="updateGroupeTest" time="0.995"/>
+  <testcase classname="uvsq.pglp.TestSuit" name="findGroupeTest" time="0.722"/>
+  <testcase classname="uvsq.pglp.TestSuit" name="createPersonnelTest" time="0.938"/>
+  <testcase classname="uvsq.pglp.TestSuit" name="deleteAnnuaireTest" time="0.799"/>
+  <testcase classname="uvsq.pglp.TestSuit" name="findPersonnelTest" time="0.438"/>
+</testsuite>
